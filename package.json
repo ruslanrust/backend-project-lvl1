@@ -5,7 +5,7 @@
   "description": "[![Actions Status](https://github.com/ruslanrust/backend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/ruslanrust/backend-project-lvl1/actions)",
   "bin": {
     "brain-games": "bin/brain-games.js"
-  }, 
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/ruslanrust/backend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/ruslanrust/backend-project-lvl1#readme"
+  "homepage": "https://github.com/ruslanrust/backend-project-lvl1#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
 }

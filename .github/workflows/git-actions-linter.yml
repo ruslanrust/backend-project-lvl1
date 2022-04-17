@@ -1,8 +1,8 @@
 name: git-actions-linter
 on: push
 jobs:
-  my-job:
+  check:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
+      - name: linter check
         run: make lint
