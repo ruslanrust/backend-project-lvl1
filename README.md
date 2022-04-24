@@ -8,12 +8,13 @@
 ##  Setup
 
 ```sh
-1. make install
-2. make brain-even (from working directory)
+make install
 ```
 
 ## Usage example
 
 **Even or not**
+
+Use `make brain-even (from working directory)` to start game
 
 [![asciicast](https://asciinema.org/a/EPogz3RdRY5vi7RqyVEkV9hPy.svg)](https://asciinema.org/a/EPogz3RdRY5vi7RqyVEkV9hPy)
