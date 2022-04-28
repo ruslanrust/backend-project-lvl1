@@ -18,3 +18,9 @@ make install
 Use `make brain-even (from working directory)` to start game
 
 [![asciicast](https://asciinema.org/a/EPogz3RdRY5vi7RqyVEkV9hPy.svg)](https://asciinema.org/a/EPogz3RdRY5vi7RqyVEkV9hPy)
+
+**Calculator**
+
+Use `make brain-calc (from working directory)` to start game
+
+[![asciicast](https://asciinema.org/a/c4CSqhjGZI9jX6UGn3Ca7BDRQ.svg)](https://asciinema.org/a/c4CSqhjGZI9jX6UGn3Ca7BDRQ)
