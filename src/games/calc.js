@@ -2,8 +2,6 @@ import {
   askName, roundsCount, getAnswer, askQuestion, isAnswerCorrect, generateRandomNum,
 } from '../index.js';
 
-const userName = askName();
-
 const operations = ['+', '-', '*'];
 
 const generateRandomOperation = () => {
@@ -11,7 +9,7 @@ const generateRandomOperation = () => {
   return operations[randomNum];
 };
 
-const startRound = () => {
+const startRound = (userName) => {
   const randomFirstOperand = generateRandomNum(1, 10);
   const randomSecondOperand = generateRandomNum(1, 10);
   const randomOperation = generateRandomOperation();
@@ -33,7 +31,7 @@ const startRound = () => {
         result = randomFirstOperand * randomSecondOperand;
         break;
       default:
-        console.log('попал в дефолт');
+        console.log('ops');
     }
     return result;
   };
@@ -51,10 +49,13 @@ const startRound = () => {
 };
 
 const startGameCalc = () => {
+  console.log('Welcome to the Brain Games!');
+  const userName = askName();
+  console.log(`Hello, ${userName}!`);
   console.log('What is the result of the expression?');
 
   for (let i = 0; i < roundsCount(); i += 1) {
-    const result = startRound();
+    const result = startRound(userName);
     if (result === false) {
       return;
     }
