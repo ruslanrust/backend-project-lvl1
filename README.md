@@ -24,3 +24,9 @@ Use `make brain-even (from working directory)` to start game
 Use `make brain-calc (from working directory)` to start game
 
 [![asciicast](https://asciinema.org/a/c4CSqhjGZI9jX6UGn3Ca7BDRQ.svg)](https://asciinema.org/a/c4CSqhjGZI9jX6UGn3Ca7BDRQ)
+
+**Greatest common divisor**
+
+Use `make brain-gcd (from working directory)` to start game
+
+[![asciicast](https://asciinema.org/a/6Spz5YEXJ5n81j2DkT8xQ6APz.svg)](https://asciinema.org/a/6Spz5YEXJ5n81j2DkT8xQ6APz)
