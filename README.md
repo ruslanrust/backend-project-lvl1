@@ -36,3 +36,9 @@ Use `make brain-gcd (from working directory)` to start game
 Use `make brain-progression (from working directory)` to start game
 
 [![asciicast](https://asciinema.org/a/n7Sd1tJLxEwLoAWK6LSGINBty.svg)](https://asciinema.org/a/n7Sd1tJLxEwLoAWK6LSGINBty)
+
+**Prime or not**
+
+Use `make brain-prime (from working directory)` to start game
+
+[![asciicast](https://asciinema.org/a/T9tBZgtUQn94i595cbjP68igd.svg)](https://asciinema.org/a/T9tBZgtUQn94i595cbjP68igd)
