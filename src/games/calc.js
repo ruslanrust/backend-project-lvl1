@@ -2,25 +2,25 @@ import {
   askName, roundsCount, getAnswer, askQuestion, isAnswerCorrect, generateRandomNum,
 } from '../index.js';
 
-const operations = ['+', '-', '*'];
+const operators = ['+', '-', '*'];
 
-const generateRandomOperation = () => {
-  const randomNum = generateRandomNum(0, operations.length);
-  return operations[randomNum];
+const generateRandomOperator = () => {
+  const randomNum = generateRandomNum(0, operators.length - 1);
+  return operators[randomNum];
 };
 
 const startRound = (userName) => {
   const randomFirstOperand = generateRandomNum(1, 10);
   const randomSecondOperand = generateRandomNum(1, 10);
-  const randomOperation = generateRandomOperation();
-  const expression = `${randomFirstOperand} ${randomOperation} ${randomSecondOperand}`;
+  const randomOperator = generateRandomOperator();
+  const expression = `${randomFirstOperand} ${randomOperator} ${randomSecondOperand}`;
 
   askQuestion(expression);
 
   const userAnswer = getAnswer();
   const correctResult = () => {
     let result = 0;
-    switch (randomOperation) {
+    switch (randomOperator) {
       case '+':
         result = randomFirstOperand + randomSecondOperand;
         break;
