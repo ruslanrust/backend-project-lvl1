@@ -1,13 +1,20 @@
+/* eslint-disable no-param-reassign */
 import {
   askName, roundsCount, getAnswer, askQuestion, isAnswerCorrect, generateRandomNum,
 } from '../index.js';
 
-const greatestCommonDivisor = (num1, num2) => {
-  if (num1 % num2 === 0) return num2;
-  if (num2 % num1 === 0) return num1;
-  if (num1 > num2) return greatestCommonDivisor(num1 % num2, num2);
-  if (num2 > num1) return greatestCommonDivisor(num1, num2 % num1);
-  return 0;
+const greatestCommonDivisor = (a, b) => {
+  if (a === 0 || b === 0) return 0;
+
+  while (a !== b) {
+    if (a > b) {
+      a -= b;
+    } else {
+      b -= a;
+    }
+  }
+
+  return a;
 };
 
 const startRound = (userName) => {
