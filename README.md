@@ -30,3 +30,9 @@ Use `make brain-calc (from working directory)` to start game
 Use `make brain-gcd (from working directory)` to start game
 
 [![asciicast](https://asciinema.org/a/6Spz5YEXJ5n81j2DkT8xQ6APz.svg)](https://asciinema.org/a/6Spz5YEXJ5n81j2DkT8xQ6APz)
+
+**Arithmetic progression**
+
+Use `make brain-progression (from working directory)` to start game
+
+[![asciicast](https://asciinema.org/a/n7Sd1tJLxEwLoAWK6LSGINBty.svg)](https://asciinema.org/a/n7Sd1tJLxEwLoAWK6LSGINBty)
