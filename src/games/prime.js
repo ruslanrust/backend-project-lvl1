@@ -11,7 +11,7 @@ const isPrime = (num) => {
   return true;
 };
 
-const startRound = (userName) => {
+const startRound = () => {
   const randomNum = generateRandomNum(1, 20);
 
   askQuestion(randomNum);
@@ -25,7 +25,7 @@ const startRound = (userName) => {
   }
 
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${userName}!`);
+
   return false;
 };
 
@@ -36,8 +36,9 @@ const startGamePrime = () => {
   console.log("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
   for (let i = 0; i < roundsCount(); i += 1) {
-    const result = startRound(userName);
+    const result = startRound();
     if (result === false) {
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }

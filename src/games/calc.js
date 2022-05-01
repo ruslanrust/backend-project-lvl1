@@ -9,7 +9,7 @@ const generateRandomOperator = () => {
   return operators[randomNum];
 };
 
-const startRound = (userName) => {
+const startRound = () => {
   const randomFirstOperand = generateRandomNum(1, 10);
   const randomSecondOperand = generateRandomNum(1, 10);
   const randomOperator = generateRandomOperator();
@@ -42,9 +42,7 @@ const startRound = (userName) => {
     console.log('Correct!');
     return true;
   }
-
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${userName}!`);
   return false;
 };
 
@@ -55,8 +53,9 @@ const startGameCalc = () => {
   console.log('What is the result of the expression?');
 
   for (let i = 0; i < roundsCount(); i += 1) {
-    const result = startRound(userName);
+    const result = startRound();
     if (result === false) {
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }

@@ -24,7 +24,7 @@ const hideArrayElement = (array, positionToHide) => {
   return result.join(' ');
 };
 
-const startRound = (userName) => {
+const startRound = () => {
   const firstNum = generateRandomNum(1, 10);
   const step = generateRandomNum(1, 10);
   const length = generateRandomNum(5, 10);
@@ -42,7 +42,7 @@ const startRound = (userName) => {
   }
 
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${userName}!`);
+
   return false;
 };
 
@@ -53,8 +53,9 @@ const startGameProgression = () => {
   console.log('What number is missing in the progression?');
 
   for (let i = 0; i < roundsCount(); i += 1) {
-    const result = startRound(userName);
+    const result = startRound();
     if (result === false) {
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }

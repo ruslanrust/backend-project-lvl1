@@ -3,21 +3,21 @@ import {
   askName, roundsCount, getAnswer, askQuestion, isAnswerCorrect, generateRandomNum,
 } from '../index.js';
 
-const greatestCommonDivisor = (a, b) => {
-  if (a === 0 || b === 0) return 0;
+const greatestCommonDivisor = (num1, num2) => {
+  if (num1 === 0 || num2 === 0) return 0;
 
-  while (a !== b) {
-    if (a > b) {
-      a -= b;
+  while (num1 !== num2) {
+    if (num1 > num2) {
+      num1 -= num2;
     } else {
-      b -= a;
+      num2 -= num1;
     }
   }
 
-  return a;
+  return num1;
 };
 
-const startRound = (userName) => {
+const startRound = () => {
   const randomNum1 = generateRandomNum(1, 20);
   const randomNum2 = generateRandomNum(1, 20);
   const question = `${randomNum1} ${randomNum2}`;
@@ -33,7 +33,7 @@ const startRound = (userName) => {
   }
 
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${userName}!`);
+
   return false;
 };
 
@@ -44,8 +44,9 @@ const startGameGcd = () => {
   console.log('Find the greatest common divisor of given numbers.');
 
   for (let i = 0; i < roundsCount(); i += 1) {
-    const result = startRound(userName);
+    const result = startRound();
     if (result === false) {
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }

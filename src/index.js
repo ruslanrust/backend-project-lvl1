@@ -14,8 +14,8 @@ const roundsCount = () => 3;
 
 const getAnswer = () => readlineSync.question('Your answer: ');
 
-const askQuestion = (param) => {
-  console.log(`Question: ${param}`);
+const askQuestion = (text) => {
+  console.log(`Question: ${text}`);
 };
 
 const isAnswerCorrect = (userAnswer, correctAnswer) => {
