@@ -1,6 +1,4 @@
-import {
-  askName, roundsCount, getAnswer, askQuestion, isAnswerCorrect, generateRandomNum,
-} from '../index.js';
+import generateRandomNum from '../utils.js';
 
 const operators = ['+', '-', '*'];
 
@@ -9,16 +7,17 @@ const generateRandomOperator = () => {
   return operators[randomNum];
 };
 
+const gameDiscription = 'What is the result of the expression?';
+
 const startRound = () => {
   const randomFirstOperand = generateRandomNum(1, 10);
   const randomSecondOperand = generateRandomNum(1, 10);
   const randomOperator = generateRandomOperator();
   const expression = `${randomFirstOperand} ${randomOperator} ${randomSecondOperand}`;
 
-  askQuestion(expression);
+  const question = expression;
 
-  const userAnswer = getAnswer();
-  const correctResult = () => {
+  const resultOfExpression = () => {
     let result = 0;
     switch (randomOperator) {
       case '+':
@@ -36,30 +35,9 @@ const startRound = () => {
     return result;
   };
 
-  const correctAnswer = correctResult().toString();
+  const answer = resultOfExpression().toString();
 
-  if (isAnswerCorrect(userAnswer, correctAnswer)) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  return false;
+  return [question, answer];
 };
 
-const startGameCalc = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = askName();
-  console.log(`Hello, ${userName}!`);
-  console.log('What is the result of the expression?');
-
-  for (let i = 0; i < roundsCount(); i += 1) {
-    const result = startRound();
-    if (result === false) {
-      console.log(`Let's try again, ${userName}!`);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${userName}!`);
-};
-
-export default startGameCalc;
+export { startRound, gameDiscription };

@@ -1,6 +1,4 @@
-import {
-  askName, roundsCount, getAnswer, askQuestion, isAnswerCorrect, generateRandomNum,
-} from '../index.js';
+import generateRandomNum from '../utils.js';
 
 const isPrime = (num) => {
   if (num === 0 || num === 1) return false;
@@ -11,38 +9,16 @@ const isPrime = (num) => {
   return true;
 };
 
+const gameDiscription = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
 const startRound = () => {
   const randomNum = generateRandomNum(1, 20);
 
-  askQuestion(randomNum);
+  const question = randomNum;
 
-  const userAnswer = getAnswer();
-  const correctAnswer = isPrime(randomNum) ? 'yes' : 'no';
+  const answer = isPrime(randomNum) ? 'yes' : 'no';
 
-  if (isAnswerCorrect(userAnswer, correctAnswer)) {
-    console.log('Correct!');
-    return true;
-  }
-
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-
-  return false;
+  return [question, answer];
 };
 
-const startGamePrime = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = askName();
-  console.log(`Hello, ${userName}!`);
-  console.log("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-
-  for (let i = 0; i < roundsCount(); i += 1) {
-    const result = startRound();
-    if (result === false) {
-      console.log(`Let's try again, ${userName}!`);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${userName}!`);
-};
-
-export default startGamePrime;
+export { startRound, gameDiscription };

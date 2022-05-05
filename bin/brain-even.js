@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import startGameEven from '../src/games/even.js';
+import gameEngine from '../src/index.js';
+import { startRound, gameDiscription } from '../src/games/even.js';
 
-startGameEven();
+gameEngine(gameDiscription, startRound);

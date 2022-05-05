@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import startGamePrime from '../src/games/prime.js';
+import gameEngine from '../src/index.js';
+import { startRound, gameDiscription } from '../src/games/prime.js';
 
-startGamePrime();
+gameEngine(gameDiscription, startRound);
