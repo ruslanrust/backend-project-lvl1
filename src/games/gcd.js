@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import generateRandomNum from '../utils.js';
 
 const greatestCommonDivisor = (num1, num2) => {
