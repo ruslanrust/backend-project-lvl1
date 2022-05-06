@@ -12,30 +12,22 @@ const generateProgression = (firstNum, step, length) => {
   return result;
 };
 
-const hideArrayElement = (array, positionToHide) => {
-  const result = [];
-  for (let i = 0; i < array.length; i += 1) {
-    if (i === positionToHide) {
-      result.push('..');
-    } else result.push(array[i]);
-  }
-  return result.join(' ');
-};
+const gameDescription = 'What number is missing in the progression?';
 
-const gameDiscription = 'What number is missing in the progression?';
-
-const startRound = () => {
+const makeRound = () => {
   const firstNum = generateRandomNum(1, 10);
   const step = generateRandomNum(1, 10);
   const length = generateRandomNum(5, 10);
-  const hidingPosition = generateRandomNum(0, length - 1);
   const progression = generateProgression(firstNum, step, length);
 
-  const question = hideArrayElement(progression, hidingPosition);
+  const hideIndex = generateRandomNum(0, length - 1);
+  const answer = progression[hideIndex].toString();
 
-  const answer = progression[hidingPosition].toString();
+  progression[hideIndex] = '..';
+
+  const question = progression.join(' ');
 
   return [question, answer];
 };
 
-export { startRound, gameDiscription };
+export { makeRound, gameDescription };

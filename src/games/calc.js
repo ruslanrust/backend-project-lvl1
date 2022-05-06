@@ -2,42 +2,27 @@ import generateRandomNum from '../utils.js';
 
 const operators = ['+', '-', '*'];
 
-const generateRandomOperator = () => {
-  const randomNum = generateRandomNum(0, operators.length - 1);
-  return operators[randomNum];
+const resultOfExpression = (num1, num2, operator) => {
+  switch (operator) {
+    case '+': return num1 + num2;
+    case '-': return num1 - num2;
+    case '*': return num1 * num2;
+    default: throw new Error(`operator ${operator} - unsupported`);
+  }
 };
 
-const gameDiscription = 'What is the result of the expression?';
+const gameDescription = 'What is the result of the expression?';
 
-const startRound = () => {
-  const randomFirstOperand = generateRandomNum(1, 10);
-  const randomSecondOperand = generateRandomNum(1, 10);
-  const randomOperator = generateRandomOperator();
-  const expression = `${randomFirstOperand} ${randomOperator} ${randomSecondOperand}`;
-
+const makeRound = () => {
+  const randomNum1 = generateRandomNum(1, 10);
+  const randomNum2 = generateRandomNum(1, 10);
+  const randomOperator = operators[generateRandomNum(0, operators.length - 1)];
+  const expression = `${randomNum1} ${randomOperator} ${randomNum2}`;
   const question = expression;
 
-  const resultOfExpression = () => {
-    let result = 0;
-    switch (randomOperator) {
-      case '+':
-        result = randomFirstOperand + randomSecondOperand;
-        break;
-      case '-':
-        result = randomFirstOperand - randomSecondOperand;
-        break;
-      case '*':
-        result = randomFirstOperand * randomSecondOperand;
-        break;
-      default:
-        console.log('ops');
-    }
-    return result;
-  };
-
-  const answer = resultOfExpression().toString();
+  const answer = resultOfExpression(randomNum1, randomNum2, randomOperator).toString();
 
   return [question, answer];
 };
 
-export { startRound, gameDiscription };
+export { makeRound, gameDescription };

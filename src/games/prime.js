@@ -9,16 +9,14 @@ const isPrime = (num) => {
   return true;
 };
 
-const gameDiscription = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+const gameDescription = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-const startRound = () => {
+const makeRound = () => {
   const randomNum = generateRandomNum(1, 20);
-
   const question = randomNum;
-
   const answer = isPrime(randomNum) ? 'yes' : 'no';
 
   return [question, answer];
 };
 
-export { startRound, gameDiscription };
+export { makeRound, gameDescription };

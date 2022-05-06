@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import generateRandomNum from '../utils.js';
 
 const greatestCommonDivisor = (num1, num2) => {
@@ -15,16 +14,15 @@ const greatestCommonDivisor = (num1, num2) => {
   return num1;
 };
 
-const gameDiscription = 'Find the greatest common divisor of given numbers.';
+const gameDescription = 'Find the greatest common divisor of given numbers.';
 
-const startRound = () => {
+const makeRound = () => {
   const randomNum1 = generateRandomNum(1, 20);
   const randomNum2 = generateRandomNum(1, 20);
   const question = `${randomNum1} ${randomNum2}`;
-
   const answer = greatestCommonDivisor(randomNum1, randomNum2).toString();
 
   return [question, answer];
 };
 
-export { startRound, gameDiscription };
+export { makeRound, gameDescription };
