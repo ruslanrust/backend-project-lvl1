@@ -17,8 +17,8 @@ const makeRound = () => {
   const randomNum1 = generateRandomNum(1, 10);
   const randomNum2 = generateRandomNum(1, 10);
   const randomOperator = operators[generateRandomNum(0, operators.length - 1)];
-  const expression = `${randomNum1} ${randomOperator} ${randomNum2}`;
-  const question = expression;
+
+  const question = `${randomNum1} ${randomOperator} ${randomNum2}`;
 
   const answer = resultOfExpression(randomNum1, randomNum2, randomOperator).toString();
 
